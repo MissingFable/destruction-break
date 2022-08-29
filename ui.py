@@ -32,27 +32,6 @@ class Transition:
                     pass
                 # if the type is surface, then lerp the opacity and  change it to the lerped number
 
-class Image(Transition):
-    def __init__(self, loaded_image, position, opacity= 255):
-        Transition.__init__(self)
-        self.image = loaded_image
-        # define image
-        self.image.set_alpha(opacity)
-        # define image opacity
-
-        self.rect = self.image.get_rect()
-        self.rect.topleft = position
-        # get rect and move it to position
-
-    def draw(self, display):
-        display.blit(self.image, self.rect.topleft)
-        # display the rect
-    
-    def update_image(self, new_loaded_image, new_image_opacity= 255):
-        self.image = new_loaded_image
-        self.image.set_alpha(new_image_opacity)
-        # change image to new image with certain opacity
-
 class Text(Transition):
     def __init__(self, text, position, color, font_name, font_size, opacity=255, shadow=False, shadow_color= (255, 0, 0), shadow_padding= pygame.math.Vector2(2, 2), shadow_opacity = 255):
         Transition.__init__(self)
